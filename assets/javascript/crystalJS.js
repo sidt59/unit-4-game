@@ -21,22 +21,52 @@ var score = 0;
 $("#crystal-1").on('click', function() {
   score = score + crystal1;
   $("#userScore").text(score);
+  winCheckr();
 })
 
 $("#crystal-2").on('click', function() {
   score = score + crystal2;
   $("#userScore").text(score);
+  winCheckr();
 })
 
 $("#crystal-3").on('click', function() {
   score = score + crystal3;
   $("#userScore").text(score);
+  winCheckr();
 })
 
 $("#crystal-4").on('click', function() {
   score = score + crystal4;
   $("#userScore").text(score);
+  winCheckr();
 })
+
+// function to alert user if won/lost
+function winCheckr() {
+  if (score === targetNumber) {
+    wins++;
+    alert("YOU WIN!");
+    $("#Wins").text(wins);
+    resetGame();
+  } else if (score > targetNumber) {
+    losses++;
+    $("#Losses").text(losses);
+    resetGame();
+  }
+}
+
+// function to reset game after win/loss
+function resetGame() {
+  crystal1 = Math.floor(Math.random() *12) + 1;
+  crystal2 = Math.floor(Math.random() *12) + 1;
+  crystal3 = Math.floor(Math.random() *12) + 1;
+  crystal4 = Math.floor(Math.random() *12) + 1;
+  score = 0;
+  $("#userScore").text(score);
+  targetNumber = Math.floor(Math.random() * 101) + 19;;
+  $("#computerNum").html(targetNumber);
+}
 
 
 }); 
