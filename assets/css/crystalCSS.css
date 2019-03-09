@@ -1,4 +1,23 @@
+body {
+  background: url("https://images.unsplash.com/photo-1549056572-75914d5d5fd4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80");
+  background-size: 100% 215%;
+  background-position: fixed;
+}
+
 .crystal-image {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
+  }
+
+.container {
+  padding: 20px;
+  background-color: black;
+}
+
+  h6 {
+    color: white;
+  }
+
+  p {
+    color: white;
   }
